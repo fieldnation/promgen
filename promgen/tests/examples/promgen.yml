@@ -1,10 +1,10 @@
 # Prometheus settings
 # These are used for Promgen to automatically trigger a reload on target changes
 prometheus:
-  url: http://prometheus:9090/
+  url: http://ungaged-koala-prometheus-server:80/
 
 alertmanager:
-  url: http://alertmanager:9093
+  url: http://ungaged-koala-prometheus-alertmanager:9093
 
 # Settings related to target configuration file.
 config_writer:

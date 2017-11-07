@@ -13,6 +13,11 @@ RUN mkdir -p /etc/promgen
 RUN mkdir -p /usr/src/app
 RUN chown promgen /etc/prometheus
 
+RUN apk add --no-cache wget && wget https://github.com/prometheus/prometheus/releases/download/v1.8.2/prometheus-1.8.2.linux-amd64.tar.gz
+RUN tar xvzf prometheus-1.8.2.linux-amd64.tar.gz
+RUN cp prometheus-1.8.2.linux-amd64/promtool /usr/local/bin/promtool
+RUN apk --no-cache add curl 
+
 COPY docker/requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
 

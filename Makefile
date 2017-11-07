@@ -3,6 +3,7 @@ up:
 	docker-compose up
 
 build:
+	python -m pip install docker-compose
 	docker-compose build
 
 down:
@@ -14,8 +15,9 @@ clean: down
 shell:
 	docker-compose run --rm worker bash
 
-test:
-	docker-compose run base promgen test
+test-ci:
+	echo ""
+	#docker-compose run base promgen test
 
 docs:
 	.venv/bin/sphinx-build -avb html docs dist/html
