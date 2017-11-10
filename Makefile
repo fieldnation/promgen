@@ -3,7 +3,7 @@ up:
 	docker-compose up
 
 build:
-	pip install docker-compose
+	python -m pip install docker-compose
 	docker-compose build
 
 down:
