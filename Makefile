@@ -15,7 +15,7 @@ clean: down
 shell:
 	docker-compose run --rm worker bash
 
-test:
+test-ci:
 	docker-compose run base promgen test
 
 docs:
