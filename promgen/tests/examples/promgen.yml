@@ -1,7 +1,7 @@
 # Prometheus settings
 # These are used for Promgen to automatically trigger a reload on target changes
 prometheus:
-  url: http://promgen-prometheus-prometheus-server:9090/
+  url: http://promgen-prometheus-prometheus-server:80/
 
 alertmanager:
   url: http://alertmanager:9093
