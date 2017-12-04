@@ -13,7 +13,7 @@ RUN mkdir -p /etc/promgen
 RUN mkdir -p /usr/src/app
 RUN chown promgen /etc/prometheus
 
-RUN apk add --no-cache wget && wget https://github.com/prometheus/prometheus/r
+RUN apk add --no-cache wget && wget https://github.com/prometheus/prometheus/releases/download/v1.8.2/prometheus-1.8.2.linux-amd64.tar.gz
 RUN tar xvzf prometheus-1.8.2.linux-amd64.tar.gz
 RUN cp prometheus-1.8.2.linux-amd64/promtool /usr/local/bin/promtool
 RUN apk --no-cache add curl
@@ -23,7 +23,6 @@ RUN pip install -r /tmp/requirements.txt
 
 COPY setup.py /usr/src/app/setup.py
 COPY promgen /usr/src/app/promgen
-COPY promgen/tests/examples/promgen.yml /etc/promgen/promgen.yml
 
 WORKDIR /usr/src/app
 RUN pip install -e .
